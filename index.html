@@ -1,0 +1,702 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VORTEX ROLEPLAY | RULES</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+ --red:#a50920;
+ --bright:#e51b38;
+ --bg:#09090c;
+ --card:#111116;
+ --text:#f5f3f4;
+ --muted:#929098;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+ font-family:'Cairo',sans-serif;
+ background:var(--bg);
+ color:var(--text);
+ overflow-x:hidden;
+}
+
+body:before{
+ content:"";
+ position:fixed;
+ width:600px;height:600px;
+ background:radial-gradient(circle,#8e071b22,transparent 70%);
+ top:-250px;right:-150px;
+ pointer-events:none;
+ z-index:-1;
+}
+
+body:after{
+ content:"";
+ position:fixed;
+ width:500px;height:500px;
+ background:radial-gradient(circle,#a5092015,transparent 70%);
+ bottom:-200px;left:-150px;
+ pointer-events:none;
+ z-index:-1;
+}
+
+header{
+ height:80px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ padding:0 7%;
+ border-bottom:1px solid #ffffff0d;
+ background:#09090ce8;
+ backdrop-filter:blur(15px);
+ position:sticky;
+ top:0;
+ z-index:100;
+}
+
+.logo{
+ font-size:24px;
+ font-weight:900;
+ letter-spacing:2px;
+}
+
+.logo span{color:var(--bright)}
+
+.header-tag{
+ color:#aaa;
+ font-size:12px;
+ border:1px solid #a509204d;
+ padding:7px 15px;
+ border-radius:30px;
+}
+
+.hero{
+ text-align:center;
+ padding:105px 20px 75px;
+ position:relative;
+}
+
+.hero-label{
+ display:inline-block;
+ color:#ff5068;
+ background:#a509201c;
+ border:1px solid #a509204d;
+ padding:7px 20px;
+ border-radius:30px;
+ font-size:12px;
+ letter-spacing:2px;
+ margin-bottom:25px;
+}
+
+.hero h1{
+ font-size:clamp(40px,8vw,85px);
+ font-weight:900;
+ letter-spacing:3px;
+ line-height:1.3;
+ text-shadow:0 0 35px #a5092040;
+}
+
+.hero h1 span{
+ color:var(--bright);
+}
+
+.hero h2{
+ font-size:19px;
+ margin-top:12px;
+ color:#d5d0d2;
+}
+
+.hero p{
+ max-width:700px;
+ margin:20px auto;
+ color:var(--muted);
+ font-size:14px;
+ line-height:2.2;
+}
+
+.hero-line{
+ width:100px;height:3px;
+ background:var(--bright);
+ margin:30px auto 0;
+ box-shadow:0 0 20px var(--bright);
+ border-radius:20px;
+}
+
+.stats{
+ display:flex;
+ justify-content:center;
+ gap:15px;
+ flex-wrap:wrap;
+ margin-top:40px;
+}
+
+.stat{
+ background:#ffffff06;
+ border:1px solid #ffffff12;
+ padding:15px 25px;
+ border-radius:12px;
+ min-width:130px;
+}
+
+.stat strong{
+ display:block;
+ color:var(--bright);
+ font-size:22px;
+}
+
+.stat small{color:#999;font-size:11px}
+
+.layout{
+ display:grid;
+ grid-template-columns:250px 1fr;
+ gap:30px;
+ max-width:1250px;
+ margin:auto;
+ padding:20px 25px 100px;
+}
+
+.sidebar{
+ position:sticky;
+ top:105px;
+ height:max-content;
+ background:var(--card);
+ border:1px solid #ffffff10;
+ border-radius:16px;
+ padding:20px;
+}
+
+.sidebar h3{
+ color:var(--bright);
+ font-size:15px;
+ margin-bottom:15px;
+}
+
+.nav-link{
+ display:block;
+ text-decoration:none;
+ color:#aaa;
+ font-size:13px;
+ padding:11px 13px;
+ border-radius:8px;
+ margin-bottom:5px;
+ transition:.25s;
+}
+
+.nav-link:hover,.nav-link.active{
+ background:#a5092020;
+ color:white;
+ border-right:3px solid var(--bright);
+}
+
+.content{min-width:0}
+
+.section-title{
+ margin:20px 0 25px;
+}
+
+.section-title small{
+ color:var(--bright);
+ font-size:11px;
+ letter-spacing:2px;
+}
+
+.section-title h2{
+ font-size:27px;
+ margin-top:5px;
+}
+
+.section-title p{
+ color:var(--muted);
+ font-size:12px;
+ margin-top:5px;
+}
+
+.search{
+ width:100%;
+ background:#111116;
+ border:1px solid #ffffff16;
+ border-radius:12px;
+ padding:17px 20px;
+ color:white;
+ outline:none;
+ font-family:inherit;
+ font-size:13px;
+ margin-bottom:25px;
+ transition:.3s;
+}
+
+.search:focus{
+ border-color:var(--bright);
+ box-shadow:0 0 20px #a5092020;
+}
+
+.rule-card{
+ background:linear-gradient(130deg,#15151b,#101014);
+ border:1px solid #ffffff10;
+ border-radius:13px;
+ margin-bottom:12px;
+ overflow:hidden;
+ transition:.3s;
+ scroll-margin-top:110px;
+}
+
+.rule-card:hover{
+ border-color:#a509205e;
+ transform:translateY(-2px);
+}
+
+.rule-head{
+ width:100%;
+ border:0;
+ background:transparent;
+ color:white;
+ padding:19px 20px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ cursor:pointer;
+ font-family:inherit;
+ text-align:right;
+}
+
+.rule-name{
+ display:flex;
+ align-items:center;
+ gap:13px;
+ font-size:14px;
+ font-weight:800;
+}
+
+.rule-number{
+ width:35px;height:35px;
+ display:grid;
+ place-items:center;
+ background:#a5092025;
+ color:#ff526a;
+ border-radius:9px;
+ font-size:12px;
+ flex-shrink:0;
+}
+
+.arrow{
+ color:var(--bright);
+ font-size:20px;
+ transition:.3s;
+}
+
+.rule-card.open .arrow{transform:rotate(180deg)}
+
+.rule-body{
+ max-height:0;
+ overflow:hidden;
+ transition:max-height .4s ease;
+}
+
+.rule-body p{
+ color:#b9b6bd;
+ font-size:13px;
+ line-height:2.4;
+ padding:0 22px 22px 65px;
+}
+
+.empty{
+ display:none;
+ text-align:center;
+ color:#999;
+ padding:40px;
+}
+
+footer{
+ border-top:1px solid #ffffff12;
+ text-align:center;
+ padding:50px 20px;
+ background:#08080b;
+}
+
+footer h2{
+ font-size:30px;
+ font-weight:900;
+}
+
+footer h2 span{color:var(--bright)}
+
+footer p{
+ color:#888;
+ font-size:12px;
+ margin-top:12px;
+ line-height:2;
+}
+
+.footer-line{
+ width:50px;height:3px;
+ background:var(--red);
+ margin:20px auto;
+}
+
+.top{
+ position:fixed;
+ bottom:25px;left:25px;
+ width:45px;height:45px;
+ border:1px solid #a5092070;
+ background:#171016;
+ color:white;
+ border-radius:12px;
+ cursor:pointer;
+ font-size:20px;
+ display:none;
+ z-index:50;
+}
+
+@media(max-width:800px){
+ header{padding:0 5%;height:70px}
+ .layout{grid-template-columns:1fr;padding:15px}
+ .sidebar{
+  position:relative;
+  top:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+ }
+ .sidebar h3{width:100%}
+ .nav-link{margin:0;padding:8px 10px}
+ .hero{padding:75px 15px 50px}
+ .rule-body p{padding:0 18px 20px}
+ .rule-head{padding:15px}
+ .rule-name{font-size:12px}
+ .section-title h2{font-size:23px}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="logo">VORTEX <span>RP</span></div>
+ <div class="header-tag">OFFICIAL RULES</div>
+</header>
+
+<section class="hero">
+ <div class="hero-label">VORTEX ROLEPLAY COMMUNITY</div>
+
+ <h1>VORTEX <span>ROLEPLAY</span></h1>
+
+ <h2>القوانين الرسمية للسيرفر</h2>
+
+ <p>
+ مرحباً بكم في مدينة VORTEX ROLEPLAY
+ نهدف إلى تقديم تجربة حياة واقعية مليئة بالمتعة والتفاعل والاحترافية
+ وقد تم وضع هذه القوانين لتنظيم الحياة داخل المدينة وضمان حقوق جميع اللاعبين
+ </p>
+
+ <div class="hero-line"></div>
+
+ <div class="stats">
+  <div class="stat">
+   <strong>RP</strong>
+   <small>REALISTIC ROLEPLAY</small>
+  </div>
+  <div class="stat">
+   <strong>FAIR</strong>
+   <small>JUSTICE SYSTEM</small>
+  </div>
+  <div class="stat">
+   <strong>RULES</strong>
+   <small>OFFICIAL REGULATIONS</small>
+  </div>
+ </div>
+</section>
+
+<div class="layout">
+
+<aside class="sidebar">
+ <h3>قائمة القوانين</h3>
+ <a class="nav-link active" href="#general">القوانين العامة</a>
+ <a class="nav-link" href="#police">قوانين الشرطة</a>
+ <a class="nav-link" href="#citizens">قوانين المواطنين</a>
+ <a class="nav-link" href="#medics">قوانين المسعفين</a>
+ <a class="nav-link" href="#crime">الإجرام والعصابات</a>
+ <a class="nav-link" href="#justice">العدل والمحاكم</a>
+ <a class="nav-link" href="#punishment">نظام العقوبات</a>
+ <a class="nav-link" href="#ending">الرسالة الختامية</a>
+</aside>
+
+<main class="content">
+
+<div class="section-title">
+ <small>REGULATIONS / 01</small>
+ <h2>القوانين والأنظمة</h2>
+ <p>جميع القوانين الرسمية المعتمدة في VORTEX ROLEPLAY</p>
+</div>
+
+<input class="search" id="search" placeholder="ابحث عن قانون معين...">
+
+<section id="general">
+ <div class="section-title">
+  <small>GENERAL RULES</small>
+  <h2>القوانين العامة</h2>
+  <p>القواعد الأساسية لجميع اللاعبين داخل المدينة</p>
+ </div>
+
+ <div id="generalRules"></div>
+</section>
+
+<section id="police">
+ <div class="section-title">
+  <small>LAW ENFORCEMENT</small>
+  <h2>قوانين الشرطة</h2>
+ </div>
+ <div id="policeRules"></div>
+</section>
+
+<section id="citizens">
+ <div class="section-title">
+  <small>CITIZENS</small>
+  <h2>قوانين المواطنين</h2>
+ </div>
+ <div id="citizenRules"></div>
+</section>
+
+<section id="medics">
+ <div class="section-title">
+  <small>MEDICAL DEPARTMENT</small>
+  <h2>قوانين المسعفين</h2>
+ </div>
+ <div id="medicRules"></div>
+</section>
+
+<section id="crime">
+ <div class="section-title">
+  <small>CRIMINAL ORGANIZATION</small>
+  <h2>الإجرام والعصابات</h2>
+ </div>
+ <div id="crimeRules"></div>
+</section>
+
+<section id="justice">
+ <div class="section-title">
+  <small>JUSTICE SYSTEM</small>
+  <h2>العدل والمحاكم</h2>
+ </div>
+ <div id="justiceRules"></div>
+</section>
+
+<section id="punishment">
+ <div class="section-title">
+  <small>ADMINISTRATION</small>
+  <h2>نظام العقوبات</h2>
+ </div>
+ <div id="punishmentRules"></div>
+</section>
+
+<section id="ending">
+ <div class="section-title">
+  <small>FINAL MESSAGE</small>
+  <h2>الرسالة الختامية</h2>
+ </div>
+ <div class="rule-card open">
+  <div class="rule-head" style="cursor:default">
+   <div class="rule-name">
+    <div class="rule-number">VX</div>
+    رسالة إدارة VORTEX
+   </div>
+  </div>
+  <div class="rule-body" style="max-height:500px">
+   <p>
+    إدارة VORTEX ROLEPLAY تسعى دائماً إلى توفير أفضل تجربة رول بلاي لجميع اللاعبين ونؤكد أن الالتزام بالقوانين مسؤولية الجميع<br><br>
+    نريد مدينة مليئة بالسيناريوهات الواقعية والوظائف المنظمة والشرطة المحترفة والمسعفين الذين يؤدون واجبهم والمواطنين الذين يحترمون قوانين المدينة<br><br>
+    VORTEX ROLEPLAY<br><br>
+    نظام واحترافية وواقعية
+   </p>
+  </div>
+ </div>
+</section>
+
+<div class="empty" id="empty">لم يتم العثور على أي قانون مطابق للبحث</div>
+
+</main>
+</div>
+
+<footer>
+ <h2>VORTEX <span>ROLEPLAY</span></h2>
+ <div class="footer-line"></div>
+ <p>القوانين الرسمية لمدينة VORTEX ROLEPLAY</p>
+ <p>نظام واحترافية وواقعية</p>
+ <p>© 2026 VORTEX ROLEPLAY. ALL RIGHTS RESERVED.</p>
+</footer>
+
+<button class="top" id="top">↑</button>
+
+<script>
+
+const data = {
+
+generalRules: [
+["RDM – القتل العشوائي","يمنع منعاً باتاً قتل أي لاعب دون وجود سبب واضح ومنطقي داخل الرول بلاي ويجب أن يكون هناك سيناريو أو خلاف سابق يبرر التصرف العدائي بين الشخصيات ولا يحق لأي لاعب استخدام السلاح ضد الآخرين لمجرد المزاح أو الاستفزاز أو الرغبة في القتال كما يمنع قتل اللاعبين في الأماكن العامة دون مبرر مقنع ويجب إعطاء السيناريو حقه الكامل وعدم تحويل المدينة إلى مكان للقتل العشوائي"],
+
+["VDM – الدهس العشوائي","يمنع استخدام المركبات لدهس اللاعبين بشكل متعمد دون وجود سبب منطقي داخل السيناريو كما يمنع استخدام السيارة كسلاح بهدف قتل الآخرين أو إلحاق الضرر بهم ويجب على جميع اللاعبين الالتزام بالقيادة الواقعية واحترام المشاة والمركبات الأخرى ولا يحق للاعب صدم شخص عدة مرات بهدف قتله أو تخريب السيناريو"],
+
+["Fear RP – تقدير الحياة","يجب على جميع اللاعبين تقدير حياة شخصياتهم والتصرف بطريقة واقعية عند التعرض للخطر ويجب إظهار الخوف المناسب عندما تكون حياة الشخصية مهددة ولا يجوز التصرف بتهور أمام تهديد واضح أو تجاهل وجود خطر حقيقي كما يجب التفكير في عواقب التصرفات قبل اتخاذ أي قرار قد يعرض حياة الشخصية للخطر"],
+
+["Meta Gaming – استخدام المعلومات الخارجية","يمنع استخدام أي معلومات يتم الحصول عليها خارج اللعبة والاستفادة منها داخل الرول بلاي ويشمل ذلك المعلومات الموجودة في الديسكورد أو البث المباشر أو المحادثات الخارجية ويجب أن تعتمد جميع قرارات الشخصية على المعلومات التي حصلت عليها من خلال الأحداث والتفاعلات داخل المدينة فقط"],
+
+["Power Gaming – الأفعال غير الواقعية","يمنع القيام بأي تصرفات تتجاوز القدرات الطبيعية للشخصية أو تخالف منطق الحياة الواقعية كما يمنع استغلال أنظمة اللعبة للحصول على أفضلية غير عادلة ويجب إعطاء جميع اللاعبين فرصة للتفاعل مع السيناريو وعدم فرض نتائج عليهم دون منحهم فرصة للرد"],
+
+["Fail RP – الفشل في تقمص الشخصية","يجب على جميع اللاعبين تقمص شخصياتهم بطريقة واقعية طوال فترة اللعب ويمنع تجاهل الإصابات والحوادث والمواقف الخطيرة أو التصرف بطريقة لا تتناسب مع الأحداث كما يمنع تحويل السيناريوهات الجادة إلى مزاح أو تخريب ويجب احترام طبيعة كل موقف والتفاعل معه بصورة منطقية"],
+
+["NLR – قانون الحياة الجديدة","عند موت الشخصية وانتهاء السيناريو يجب على اللاعب الالتزام بقانون الحياة الجديدة وعدم العودة إلى موقع الحادث بهدف استكمال المواجهة أو الانتقام كما يمنع تذكر تفاصيل الأحداث المرتبطة بالوفاة واستخدامها للوصول إلى الأشخاص المشاركين في السيناريو"],
+
+["Combat Logging – الخروج أثناء السيناريو","يمنع الخروج من السيرفر بشكل متعمد أثناء المطاردات أو الاعتقالات أو المواجهات أو عمليات السرقة بهدف الهروب من النتائج ويجب إكمال السيناريو حتى نهايته وفي حال حدوث انقطاع مفاجئ بسبب مشكلة تقنية يجب العودة والتواصل مع الإدارة لتوضيح الموقف"],
+
+["Revenge Kill – القتل الانتقامي","يمنع قتل أي لاعب بهدف الانتقام بسبب موقف سابق انتهى بموت الشخصية كما يمنع استخدام المعلومات التي حصل عليها اللاعب قبل الموت للوصول إلى الشخص الذي تسبب في مقتله ويجب احترام قانون الحياة الجديدة وعدم تحويل الأحداث السابقة إلى مبرر للانتقام"],
+
+["Cop Baiting – استفزاز الشرطة","يمنع استفزاز أفراد الشرطة بشكل متعمد بهدف إجبارهم على المطاردة أو الدخول في مواجهة دون وجود سبب منطقي كما يمنع تكرار التصرفات المزعجة أمام الشرطة بهدف تعطيل عملهم أو تخريب السيناريوهات"]
+],
+
+policeRules:[
+["احترام التسلسل الإداري","يجب على جميع أفراد الشرطة احترام التسلسل الإداري والعسكري والالتزام بالأوامر الصادرة من الرتب الأعلى وعدم تجاوز الصلاحيات الممنوحة لكل رتبة كما يجب التعامل مع المواطنين باحترام واحترافية وعدم استخدام السلطة لتحقيق مصالح شخصية أو الانتقام من الآخرين"],
+
+["الاعتقالات والتفتيش","يمنع اعتقال أي مواطن دون وجود سبب قانوني داخل الرول بلاي ويجب توضيح سبب الاعتقال والالتزام بالإجراءات المعتمدة كما يجب أن يكون التفتيش مبنياً على سبب منطقي داخل السيناريو"],
+
+["استخدام القوة والأسلحة","يجب استخدام القوة والأسلحة وفقاً للموقف والتهديد الموجود ويمنع إطلاق النار العشوائي أو التصرف بتهور أثناء المطاردات كما يجب المحافظة على سلامة المواطنين واحترام حقوق جميع الأطراف"],
+
+["النزاهة الوظيفية","يمنع استغلال الرتب أو الصلاحيات لمساعدة الأصدقاء على تجاوز القانون أو منحهم معاملة خاصة كما يجب الالتزام بأوقات العمل والتعليمات الإدارية والمحافظة على سمعة الجهاز الأمني"]
+],
+
+citizenRules:[
+["الالتزام بأنظمة المدينة","يجب على جميع المواطنين الالتزام بأنظمة المدينة واحترام القوانين العامة والمحافظة على الممتلكات العامة والخاصة كما يجب التعامل مع الشرطة والمسعفين باحترام وعدم تعطيل أعمالهم أو استفزازهم دون سبب منطقي"],
+
+["القيادة والمركبات","يجب الالتزام بالقيادة الواقعية واحترام إشارات المرور والطرق العامة وعدم استخدام المركبات لإزعاج الآخرين أو تخريب السيناريوهات كما يمنع الاعتداء على ممتلكات المواطنين أو سرقة مركباتهم دون وجود سيناريو مناسب"],
+
+["البلاغات والطوارئ","يمنع تقديم البلاغات الكاذبة أو إساءة استخدام خدمات الطوارئ كما يجب احترام الأماكن الحكومية والمستشفيات ومراكز الشرطة وعدم التدخل في سيناريوهات الآخرين دون سبب واضح"],
+
+["استغلال الثغرات","يمنع استغلال الأخطاء البرمجية أو الثغرات للحصول على أموال أو مركبات أو ممتلكات ويجب الإبلاغ عن أي خلل للإدارة"]
+],
+
+medicRules:[
+["الواجبات الطبية","يجب على جميع المسعفين الالتزام بمهامهم الطبية وتقديم الخدمات الصحية للمصابين دون تمييز أو استغلال للوظيفة كما يجب التعامل مع الحالات الطبية بطريقة واقعية ومحترمة وتقديم المساعدة حسب نظام السيرفر"],
+
+["الإنعاش الطبي","يمنع إنعاش أي لاعب بطريقة تخالف نظام السيرفر أو أثناء استمرار سيناريو خطير ويجب التأكد من أن موقع الحالة آمن ومناسب لتقديم الخدمة الطبية كما يمنع استغلال الإنعاش للهروب من الاعتقالات أو العودة إلى سيناريو انتهى"],
+
+["احترام السيناريوهات","يجب احترام السيناريوهات القائمة وعدم التدخل في المواجهات أو المطاردات بطريقة تخالف الدور الطبي كما يجب التعاون مع الشرطة عند وجود حالات مشتركة والالتزام بأوقات العمل والتعليمات الإدارية"],
+
+["النزاهة الطبية","يمنع استخدام الوظيفة الطبية لتحقيق مصالح شخصية أو مساعدة الأصدقاء على تجاوز الأنظمة كما يمنع استغلال المركبات والمعدات الطبية لأغراض غير مخصصة لها"]
+],
+
+crimeRules:[
+["الأعمال الإجرامية","يجب أن يكون لكل عمل إجرامي سبب واضح ومنطقي داخل الرول بلاي ويمنع الاعتداء على المواطنين أو أفراد الشرطة دون وجود سيناريو مناسب كما يجب على أفراد العصابات احترام القيادة والرتب والتعليمات الداخلية وعدم التصرف بشكل فردي يضر بمصلحة العصابة"],
+
+["الخطف","يمنع خطف أي لاعب دون سبب منطقي أو سيناريو مناسب ويجب إعطاء الشخص المخطوف فرصة كاملة للتفاعل مع الأحداث كما يجب الالتزام بشروط وأنظمة السرقات الموجودة في السيرفر وعدم تجاوز عدد المشاركين المسموح به"],
+
+["السرقات والمفاوضات","يجب احترام المفاوضات أثناء عمليات السرقة والخطف وعدم تخريب السيناريو بشكل متعمد كما يمنع استخدام الأسلحة وإطلاق النار العشوائي في الشوارع والأماكن العامة"],
+
+["معلومات العصابات","يمنع استخدام معلومات الديسكورد أو المحادثات الخارجية لتحديد مواقع الشرطة أو المواطنين أو العصابات الأخرى كما يجب احترام نتائج السيناريو سواء كانت خسارة أو اعتقالاً أو فشل عملية"]
+],
+
+justiceRules:[
+["تطبيق القانون على الجميع","يجب تطبيق قوانين المدينة على جميع المواطنين دون استثناء سواء كانوا أصحاب مناصب أو أفراد شرطة أو مسعفين أو أفراد عصابات ولا يجوز منح أي شخص معاملة خاصة بسبب علاقاته أو رتبته أو مكانته داخل السيرفر"],
+
+["الحيادية القضائية","يجب على المسؤولين عن القضاء التعامل مع جميع القضايا بحيادية تامة وعدم الانحياز لأي طرف بسبب الصداقة أو العداوة أو المصالح الشخصية كما يمنع استغلال المنصب القضائي لتحقيق مكاسب خاصة"],
+
+["الأدلة والشهادات","يجب تقديم الأدلة والشهادات عند رفع القضايا والبلاغات ويمنع إصدار الأحكام بناءً على الشائعات أو الاتهامات غير المثبتة ويجب الاستماع إلى جميع الأطراف قبل اتخاذ القرار"],
+
+["حق الدفاع","يحق لكل متهم توضيح موقفه وتقديم الأدلة التي تدعم براءته والرد على الاتهامات الموجهة إليه ويجب إعطاؤه فرصة عادلة للدفاع عن نفسه قبل إصدار الحكم"]
+],
+
+punishmentRules:[
+["التحذير","تنبيه اللاعب بالمخالفة التي ارتكبها وتوضيح القانون الذي قام بتجاوزه"],
+
+["الإنذار الإداري","تسجيل مخالفة إدارية بحق اللاعب عند ارتكاب مخالفة تستوجب الإنذار"],
+
+["السجن الإداري","تطبيق عقوبة السجن الإداري حسب نوع المخالفة وخطورتها"],
+
+["الطرد المؤقت","إبعاد اللاعب عن السيرفر لفترة محددة حسب قرار الإدارة"],
+
+["الحظر النهائي","منع اللاعب من دخول السيرفر بشكل نهائي عند ارتكاب مخالفات جسيمة تستوجب ذلك"],
+
+["صلاحيات الإدارة","تختلف العقوبات حسب نوع المخالفة وخطورتها وتكرارها ويحق للإدارة مراجعة الأدلة وتحديد العقوبة المناسبة حسب تفاصيل كل حالة"]
+]
+
+};
+
+function render(id,items){
+ const container=document.getElementById(id);
+ container.innerHTML=items.map((item,index)=>`
+  <div class="rule-card">
+   <button class="rule-head">
+    <div class="rule-name">
+     <div class="rule-number">${String(index+1).padStart(2,'0')}</div>
+     ${item[0]}
+    </div>
+    <span class="arrow">⌄</span>
+   </button>
+   <div class="rule-body">
+    <p>${item[1]}</p>
+   </div>
+  </div>
+ `).join('');
+}
+
+Object.entries(data).forEach(([id,items])=>render(id,items));
+
+document.addEventListener('click',e=>{
+ const head=e.target.closest('.rule-head');
+ if(!head || head.style.cursor==='default')return;
+
+ const card=head.parentElement;
+ const body=card.querySelector('.rule-body');
+
+ if(card.classList.contains('open')){
+  card.classList.remove('open');
+  body.style.maxHeight=null;
+ }else{
+  card.classList.add('open');
+  body.style.maxHeight=body.scrollHeight+'px';
+ }
+});
+
+document.getElementById('search').addEventListener('input',e=>{
+ const query=e.target.value.trim().toLowerCase();
+ let found=0;
+
+ document.querySelectorAll('.rule-card').forEach(card=>{
+  const match=card.innerText.toLowerCase().includes(query);
+  card.style.display=match?'block':'none';
+  if(match)found++;
+ });
+
+ document.querySelectorAll('.content section').forEach(section=>{
+  const cards=section.querySelectorAll('.rule-card');
+  section.style.display=[...cards].some(c=>c.style.display!=='none')?'block':'none';
+ });
+
+ document.getElementById('empty').style.display=found?'none':'block';
+});
+
+const topBtn=document.getElementById('top');
+
+window.addEventListener('scroll',()=>{
+ topBtn.style.display=window.scrollY>400?'block':'none';
+});
+
+topBtn.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+
+document.querySelectorAll('.nav-link').forEach(link=>{
+ link.addEventListener('click',()=>{
+  document.querySelectorAll('.nav-link').forEach(a=>a.classList.remove('active'));
+  link.classList.add('active');
+ });
+});
+
+</script>
+</body>
+</html>
